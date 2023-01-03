@@ -2,3 +2,6 @@
 
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/OBJS/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/OBJS/frontend-project-44/actions)
+
+### Asciinema:
+Project-1, lesson-5: https://asciinema.org/a/u4R6j5bwD31OaSWYgPiiv8WCQ
