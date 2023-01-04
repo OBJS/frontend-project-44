@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
 import readlineSync from 'readline-sync';
-import name from './brain-games.js';
+import greet from '../src/cli.js';
 
+const userName = greet();
 console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
 const generateRandomInt = (min, max) => {
@@ -23,18 +24,18 @@ const playGame = () => {
         console.log('Correct!');
       } else {
         return console.log(`'${getAnswer}' is wrong answer ;(. Correct answer was 'yes'.
-                Let's try again, ${name}!`);
+                Let's try again, ${userName}!`);
       }
     } else if (oddNumber) {
       if (getAnswer === 'no') {
         console.log('Correct!');
       } else {
         return console.log(`'${getAnswer}' is wrong answer ;(. Correct answer was 'no'.
-                Let's try again, ${name}!`);
+                Let's try again, ${userName}!`);
       }
     }
   }
-  return console.log(`Congratulations, ${name}!`);
+  return console.log(`Congratulations, ${userName}!`);
 };
 
 playGame();
