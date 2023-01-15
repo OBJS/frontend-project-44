@@ -4,12 +4,13 @@ import greet from './cli.js';
 
 const userName = greet();
 
-const playGame = (core) => {
+const playGame = (core, answer) => {
   for (let i = 0; i < 3; i += 1) {
-    if (core()) {
+    core();
+    if (answer[2 * i + 1] === Number(answer[2 * i])) {
       console.log('Correct!');
     } else {
-      return console.log(`'${getAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
+      return console.log(`'${answer[2 * i]}' is wrong answer ;(. Correct answer was '${answer[2 * i + 1]}'.
             Let's try again, ${userName}!`);
     }
   }

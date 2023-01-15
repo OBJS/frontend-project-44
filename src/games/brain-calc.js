@@ -12,11 +12,14 @@ const generateExpression = () => {
   return expressions[rand];
 };
 
+const testArray = [];
+
 const gameCore = () => {
   const randomInt = generateRandomInt(1, 11);
   const randomInt2 = generateRandomInt(1, 11);
   const randomExpression = generateExpression();
   const getAnswer = readlineSync.question(`Question: ${randomInt} ${randomExpression} ${randomInt2}\nYour answer: `);
+  testArray.push(getAnswer);
   const getResultOfExpression = () => {
     switch (randomExpression) {
       case '+':
@@ -30,12 +33,12 @@ const gameCore = () => {
     }
   };
   const correctAnswer = getResultOfExpression();
-  const correct = correctAnswer === Number(getAnswer);
-  return correct;
+  testArray.push(correctAnswer);
+//   return correctAnswer;
 };
 
 const start = () => {
-  playGame(gameCore);
+  playGame(gameCore, testArray);
 };
 
 export default start;
