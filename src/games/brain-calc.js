@@ -12,14 +12,13 @@ const generateExpression = () => {
   return expressions[rand];
 };
 
-const testArray = [];
-
 const gameCore = () => {
+  const tempArray = [];
   const randomInt = generateRandomInt(1, 11);
   const randomInt2 = generateRandomInt(1, 11);
   const randomExpression = generateExpression();
   const getAnswer = readlineSync.question(`Question: ${randomInt} ${randomExpression} ${randomInt2}\nYour answer: `);
-  testArray.push(getAnswer);
+  tempArray.push(Number(getAnswer));
   const getResultOfExpression = () => {
     switch (randomExpression) {
       case '+':
@@ -33,12 +32,18 @@ const gameCore = () => {
     }
   };
   const correctAnswer = getResultOfExpression();
-  testArray.push(correctAnswer);
-//   return correctAnswer;
+  tempArray.push(correctAnswer);
+
+  return tempArray;
 };
 
+const finalArray = gameCore();
+
+const hint = `'${finalArray[0]}' is wrong answer ;(. Correct answer was '${finalArray[1]}'.
+            Let's try again, `;
+
 const start = () => {
-  playGame(gameCore, testArray);
+  playGame(gameCore, finalArray[0], finalArray[1], hint);
 };
 
 export default start;
