@@ -8,7 +8,7 @@ const playGame = (core, gameDescription) => {
   for (let i = 0; i < 3; i += 1) {
     gameDescription;
     const [answer, correctAnswer] = core();
-    if (Number(answer) === correctAnswer) {
+    if (answer === correctAnswer) {
       console.log('Correct!');
     } else {
       return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.

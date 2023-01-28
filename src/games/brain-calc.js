@@ -17,7 +17,7 @@ const gameCore = () => {
   const randomInt = generateRandomInt(1, 11);
   const randomInt2 = generateRandomInt(1, 11);
   const randomExpression = generateExpression();
-  tempArray.push(readlineSync.question(`Question: ${randomInt} ${randomExpression} ${randomInt2}\nYour answer: `));
+  tempArray.push(Number(readlineSync.question(`Question: ${randomInt} ${randomExpression} ${randomInt2}\nYour answer: `)));
   const getResultOfExpression = () => {
     switch (randomExpression) {
       case '+':
