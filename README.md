@@ -8,3 +8,4 @@ project-1, lesson-5: https://asciinema.org/a/549262
 project-1, lesson-6: https://asciinema.org/a/549506
 project-1, lesson-7: https://asciinema.org/a/555380
 project-1, lesson-8: https://asciinema.org/a/555596
+project-1, lesson-9: https://asciinema.org/a/555599
