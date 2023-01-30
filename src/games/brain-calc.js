@@ -18,18 +18,27 @@ const startGameCore = () => {
   const randomInt2 = generateRandomInt(1, 11);
   const randomExpression = generateExpression();
   const userAnswer = Number(readlineSync.question(`Question: ${randomInt1} ${randomExpression} ${randomInt2}\nYour answer: `));
+
   const getResultOfExpression = () => {
+    let result;
+
     switch (randomExpression) {
       case '+':
-        return randomInt1 + randomInt2;
+        result = randomInt1 + randomInt2;
+        break;
       case '-':
-        return randomInt1 - randomInt2;
+        result = randomInt1 - randomInt2;
+        break;
       case '*':
-        return randomInt1 * randomInt2;
+        result = randomInt1 * randomInt2;
+        break;
       default:
         break;
     }
+
+    return result;
   };
+
   const correctAnswer = getResultOfExpression();
   answerStore.push(userAnswer, correctAnswer);
 
