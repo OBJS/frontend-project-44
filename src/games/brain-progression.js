@@ -4,10 +4,10 @@ import readlineSync from 'readline-sync';
 import generateRandomInt from '../utils.js';
 import playGame from '../index.js';
 
-const gameDescription = console.log('What number is missing in the progression?');
+const gameDescription = 'What number is missing in the progression?';
 
-const gameCore = () => {
-  const tempArray = [];
+const startGameCore = () => {
+  const answerStore = [];
   const numbersSeries = [];
   let randomInt = generateRandomInt(1, 100);
   const progressionStep = generateRandomInt(1, 11);
@@ -24,13 +24,14 @@ const gameCore = () => {
   const hiddenNumber = numbersSeries[replacementNumber];
   numbersSeries[replacementNumber] = '..';
   const questionOutput = numbersSeries.join(' ');
-  tempArray.push(Number(readlineSync.question(`Question: ${questionOutput}\nYour answer: `)), hiddenNumber)
+  const userAnswer = Number(readlineSync.question(`Question: ${questionOutput}\nYour answer: `));
+  answerStore.push(userAnswer, hiddenNumber);
 
-  return tempArray;
+  return answerStore;
 };
 
 const start = () => {
-  playGame(gameCore, gameDescription);
+  playGame(startGameCore, gameDescription);
 };
 
 export default start;

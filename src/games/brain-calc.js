@@ -4,40 +4,40 @@ import readlineSync from 'readline-sync';
 import generateRandomInt from '../utils.js';
 import playGame from '../index.js';
 
-const gameDescription = console.log('What is the result of the expression?');
+const gameDescription = 'What is the result of the expression?';
 
 const generateExpression = () => {
   const expressions = ['+', '-', '*'];
-  const rand = Math.floor(Math.random() * expressions.length);
-  return expressions[rand];
+  const generatedExpression = Math.floor(Math.random() * expressions.length);
+  return expressions[generatedExpression];
 };
 
-const gameCore = () => {
-  const tempArray = [];
-  const randomInt = generateRandomInt(1, 11);
+const startGameCore = () => {
+  const answerStore = [];
+  const randomInt1 = generateRandomInt(1, 11);
   const randomInt2 = generateRandomInt(1, 11);
   const randomExpression = generateExpression();
-  tempArray.push(Number(readlineSync.question(`Question: ${randomInt} ${randomExpression} ${randomInt2}\nYour answer: `)));
+  const userAnswer = Number(readlineSync.question(`Question: ${randomInt1} ${randomExpression} ${randomInt2}\nYour answer: `));
   const getResultOfExpression = () => {
     switch (randomExpression) {
       case '+':
-        return randomInt + randomInt2;
+        return randomInt1 + randomInt2;
       case '-':
-        return randomInt - randomInt2;
+        return randomInt1 - randomInt2;
       case '*':
-        return randomInt * randomInt2;
+        return randomInt1 * randomInt2;
       default:
         break;
     }
   };
   const correctAnswer = getResultOfExpression();
-  tempArray.push(correctAnswer);
+  answerStore.push(userAnswer, correctAnswer);
 
-  return tempArray;
+  return answerStore;
 };
 
 const start = () => {
-  playGame(gameCore, gameDescription);
+  playGame(startGameCore, gameDescription);
 };
 
 export default start;

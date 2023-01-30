@@ -4,13 +4,13 @@ import readlineSync from 'readline-sync';
 import generateRandomInt from '../utils.js';
 import playGame from '../index.js';
 
-const gameDescription = console.log('Find the greatest common divisor of given numbers.');
+const gameDescription = 'Find the greatest common divisor of given numbers.';
 
-const gameCore = () => {
-  const tempArray = [];
+const startGameCore = () => {
+  const answerStore = [];
   let randomInt1 = generateRandomInt(1, 100);
   let randomInt2 = generateRandomInt(1, 100);
-  tempArray.push(Number(readlineSync.question(`Question: ${randomInt1} ${randomInt2}\nYour answer: `)));
+  const userAnswer = Number(readlineSync.question(`Question: ${randomInt1} ${randomInt2}\nYour answer: `));
   const getCorrectAnswer = () => {
     while (randomInt1 !== 0 && randomInt2 !== 0) {
       if (randomInt1 > randomInt2) {
@@ -23,13 +23,13 @@ const gameCore = () => {
   };
 
   const correctAnswer = getCorrectAnswer();
-  tempArray.push(correctAnswer);
+  answerStore.push(userAnswer, correctAnswer);
 
-  return tempArray;
+  return answerStore;
 };
 
 const start = () => {
-  playGame(gameCore, gameDescription);
+  playGame(startGameCore, gameDescription);
 };
 
 export default start;
