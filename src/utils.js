@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 export default function generateRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
+  const smallestValue = Math.ceil(min);
+  const highestValue = Math.floor(max);
 
-  return Math.floor(Math.random() * (max - min)) + min;
+  return Math.floor(Math.random() * (highestValue - smallestValue)) + smallestValue;
 }
