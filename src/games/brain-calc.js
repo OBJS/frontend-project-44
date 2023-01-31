@@ -12,6 +12,26 @@ const generateExpression = () => {
   return expressions[generatedExpression];
 };
 
+const getResultOfExpression = (integer1, integer2, expression) => {
+  let result;
+
+  switch (expression) {
+    case '+':
+      result = integer1 + integer2;
+      break;
+    case '-':
+      result = integer1 - integer2;
+      break;
+    case '*':
+      result = integer1 * integer2;
+      break;
+    default:
+      break;
+  }
+
+  return result;
+};
+
 const startGameCore = () => {
   const answerStore = [];
   const randomInt1 = generateRandomInt(1, 11);
@@ -19,27 +39,7 @@ const startGameCore = () => {
   const randomExpression = generateExpression();
   const userAnswer = Number(readlineSync.question(`Question: ${randomInt1} ${randomExpression} ${randomInt2}\nYour answer: `));
 
-  const getResultOfExpression = () => {
-    let result;
-
-    switch (randomExpression) {
-      case '+':
-        result = randomInt1 + randomInt2;
-        break;
-      case '-':
-        result = randomInt1 - randomInt2;
-        break;
-      case '*':
-        result = randomInt1 * randomInt2;
-        break;
-      default:
-        break;
-    }
-
-    return result;
-  };
-
-  const correctAnswer = getResultOfExpression();
+  const correctAnswer = getResultOfExpression(randomInt1, randomInt2, randomExpression);
   answerStore.push(userAnswer, correctAnswer);
 
   return answerStore;
