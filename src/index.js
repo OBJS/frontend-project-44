@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 
-import greet from './cli.js';
+import readlineSync from 'readline-sync';
 
-const userName = greet();
+console.log('Welcome to the Brain Games!');
+const userName = readlineSync.question('May I have your name? ');
+console.log(`Hello, ${userName}!`);
 
 const playGame = (gameCore, gameDescription) => {
   for (let i = 0; i < 3; i += 1) {
