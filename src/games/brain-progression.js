@@ -5,19 +5,24 @@ import playGame from '../index.js';
 
 const gameDescription = 'What number is missing in the progression?';
 
+const getNumberSeries = (start, step, length, store = []) => {
+  let i = 0;
+  let nextNumber = start;
+  while (i < length) {
+    nextNumber += step;
+    store.push(nextNumber);
+    i += 1;
+  }
+};
+
 const startGameCore = () => {
   const answerStore = [];
   const numbersSeries = [];
-  let randomInt = generateRandomInt(1, 100);
+  const randomInt = generateRandomInt(1, 100);
   const progressionStep = generateRandomInt(1, 11);
   const progressionLength = generateRandomInt(5, 11);
 
-  let i = 0;
-  while (i < progressionLength) {
-    randomInt += progressionStep;
-    numbersSeries.push(randomInt);
-    i += 1;
-  }
+  getNumberSeries(randomInt, progressionStep, progressionLength, numbersSeries);
 
   const replacementNumber = generateRandomInt(0, numbersSeries.length);
   const hiddenNumber = numbersSeries[replacementNumber];
