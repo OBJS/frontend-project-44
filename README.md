@@ -40,12 +40,12 @@ brain-progression
 
 ## Asciinema:
 
-<script id="asciicast-549262" src="https://asciinema.org/a/549262.js" async></script>
+[![asciicast](https://asciinema.org/a/549262.svg)](https://asciinema.org/a/549262)
 
-<script id="asciicast-549506" src="https://asciinema.org/a/549506.js" async></script>
+[![asciicast](https://asciinema.org/a/549506.svg)](https://asciinema.org/a/549506)
 
-<script id="asciicast-555380" src="https://asciinema.org/a/555380.js" async></script>
+[![asciicast](https://asciinema.org/a/555380.svg)](https://asciinema.org/a/555380)
 
-<script id="asciicast-555596" src="https://asciinema.org/a/555596.js" async></script>
+[![asciicast](https://asciinema.org/a/555596.svg)](https://asciinema.org/a/555596)
 
-<script id="asciicast-555599" src="https://asciinema.org/a/555599.js" async></script>
+[![asciicast](https://asciinema.org/a/555599.svg)](https://asciinema.org/a/555599)
