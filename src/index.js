@@ -7,8 +7,9 @@ const userName = readlineSync.question('May I have your name? ');
 console.log(`Hello, ${userName}!`);
 
 const playGame = (gameCore, gameDescription) => {
+  console.log(gameDescription);
+
   for (let i = 0; i < 3; i += 1) {
-    console.log(gameDescription);
     const [userAnswer, correctAnswer] = gameCore();
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
