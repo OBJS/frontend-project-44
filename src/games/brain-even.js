@@ -11,13 +11,8 @@ const startGameCore = () => {
   const answerStore = [];
   const randomInt = generateRandomInt(1, 101);
   const question = `Question: ${randomInt}\nYour answer: `;
-  let correctAnswer;
 
-  if (isEven(randomInt)) {
-    correctAnswer = 'yes';
-  } else {
-    correctAnswer = 'no';
-  }
+  const correctAnswer = isEven(randomInt) ? 'yes' : 'no';
 
   answerStore.push(question, correctAnswer);
 
