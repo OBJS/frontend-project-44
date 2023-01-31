@@ -5,24 +5,20 @@ import playGame from '../index.js';
 
 const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
 
+const isEven = (number) => number % 2 === 0;
+
 const startGameCore = () => {
   const answerStore = [];
   const randomInt = generateRandomInt(1, 101);
   const question = `Question: ${randomInt}\nYour answer: `;
-  const evenNumber = randomInt % 2 === 0;
+  let correctAnswer;
 
-  const getCorrectAnswer = () => {
-    let correct;
-    if (evenNumber) {
-      correct = 'yes';
-    } else {
-      correct = 'no';
-    }
+  if (isEven(randomInt)) {
+    correctAnswer = 'yes';
+  } else {
+    correctAnswer = 'no';
+  }
 
-    return correct;
-  };
-
-  const correctAnswer = getCorrectAnswer();
   answerStore.push(question, correctAnswer);
 
   return answerStore;
