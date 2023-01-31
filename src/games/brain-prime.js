@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-import readlineSync from 'readline-sync';
 import generateRandomInt from '../utils.js';
 import playGame from '../index.js';
 
@@ -9,7 +8,7 @@ const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer
 const startGameCore = () => {
   const answerStore = [];
   const randomInt = generateRandomInt(1, 20);
-  const userAnswer = readlineSync.question(`Question: ${randomInt}\nYour answer: `);
+  const question = `Question: ${randomInt}\nYour answer: `;
 
   const isPrime = () => {
     if (randomInt < 2) {
@@ -29,7 +28,7 @@ const startGameCore = () => {
   };
 
   const correctAnswer = isPrime();
-  answerStore.push(userAnswer, correctAnswer);
+  answerStore.push(question, correctAnswer);
 
   return answerStore;
 };

@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-import readlineSync from 'readline-sync';
 import generateRandomInt from '../utils.js';
 import playGame from '../index.js';
 
@@ -10,7 +9,7 @@ const startGameCore = () => {
   const answerStore = [];
   let randomInt1 = generateRandomInt(1, 100);
   let randomInt2 = generateRandomInt(1, 100);
-  const userAnswer = Number(readlineSync.question(`Question: ${randomInt1} ${randomInt2}\nYour answer: `));
+  const question = `Question: ${randomInt1} ${randomInt2}\nYour answer: `;
   const getCorrectAnswer = () => {
     while (randomInt1 !== 0 && randomInt2 !== 0) {
       if (randomInt1 > randomInt2) {
@@ -22,8 +21,8 @@ const startGameCore = () => {
     return randomInt1 + randomInt2;
   };
 
-  const correctAnswer = getCorrectAnswer();
-  answerStore.push(userAnswer, correctAnswer);
+  const correctAnswer = String(getCorrectAnswer());
+  answerStore.push(question, correctAnswer);
 
   return answerStore;
 };

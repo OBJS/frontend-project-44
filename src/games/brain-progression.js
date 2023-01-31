@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-import readlineSync from 'readline-sync';
 import generateRandomInt from '../utils.js';
 import playGame from '../index.js';
 
@@ -22,10 +21,11 @@ const startGameCore = () => {
 
   const replacementNumber = generateRandomInt(0, numbersSeries.length);
   const hiddenNumber = numbersSeries[replacementNumber];
+  const correctAnswer = String(hiddenNumber);
   numbersSeries[replacementNumber] = '..';
   const questionOutput = numbersSeries.join(' ');
-  const userAnswer = Number(readlineSync.question(`Question: ${questionOutput}\nYour answer: `));
-  answerStore.push(userAnswer, hiddenNumber);
+  const question = `Question: ${questionOutput}\nYour answer: `;
+  answerStore.push(question, correctAnswer);
 
   return answerStore;
 };

@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-import readlineSync from 'readline-sync';
 import generateRandomInt from '../utils.js';
 import playGame from '../index.js';
 
@@ -9,7 +8,7 @@ const gameDescription = 'Answer "yes" if the number is even, otherwise answer "n
 const startGameCore = () => {
   const answerStore = [];
   const randomInt = generateRandomInt(1, 101);
-  const userAnswer = readlineSync.question(`Question: ${randomInt}\nYour answer: `);
+  const question = `Question: ${randomInt}\nYour answer: `;
   const evenNumber = randomInt % 2 === 0;
 
   const getCorrectAnswer = () => {
@@ -24,7 +23,7 @@ const startGameCore = () => {
   };
 
   const correctAnswer = getCorrectAnswer();
-  answerStore.push(userAnswer, correctAnswer);
+  answerStore.push(question, correctAnswer);
 
   return answerStore;
 };

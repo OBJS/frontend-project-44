@@ -10,7 +10,8 @@ const playGame = (gameCore, gameDescription) => {
   console.log(gameDescription);
 
   for (let i = 0; i < 3; i += 1) {
-    const [userAnswer, correctAnswer] = gameCore();
+    const [question, correctAnswer] = gameCore();
+    const userAnswer = readlineSync.question(question);
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
     } else {
