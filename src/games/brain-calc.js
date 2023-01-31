@@ -8,7 +8,7 @@ const gameDescription = 'What is the result of the expression?';
 
 const generateExpression = () => {
   const expressions = ['+', '-', '*'];
-  const generatedExpression = Math.floor(Math.random() * expressions.length);
+  const generatedExpression = generateRandomInt(0, 3);
   return expressions[generatedExpression];
 };
 
