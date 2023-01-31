@@ -1,11 +1,51 @@
-<a href="https://codeclimate.com/github/OBJS/frontend-project-44/maintainability"><img src="https://api.codeclimate.com/v1/badges/9932eaa1e2d6c4ecc988/maintainability" /></a>
+# Brain-games
 
-### Hexlet tests and linter status:
+## Hexlet tests and linter status:
+
 [![Actions Status](https://github.com/OBJS/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/OBJS/frontend-project-44/actions)
+[![Maintainability](https://api.codeclimate.com/v1/badges/9932eaa1e2d6c4ecc988/maintainability)](https://codeclimate.com/github/OBJS/frontend-project-44/maintainability)
 
-### Asciinema:
-project-1, lesson-5: https://asciinema.org/a/549262
-project-1, lesson-6: https://asciinema.org/a/549506
-project-1, lesson-7: https://asciinema.org/a/555380
-project-1, lesson-8: https://asciinema.org/a/555596
-project-1, lesson-9: https://asciinema.org/a/555599
+## Setup
+
+```bash
+install
+```
+
+## Start the game
+
+Calculator:
+```bash
+brain-calc
+```
+
+Even or odd:
+```bash
+brain-even
+```
+
+Greatest common divisor:
+```bash
+brain-gcd
+```
+
+Prime or not:
+```bash
+brain-prime
+```
+
+Complement the progression:
+```bash
+brain-progression
+```
+
+## Asciinema:
+
+<script id="asciicast-549262" src="https://asciinema.org/a/549262.js" async></script>
+
+<script id="asciicast-549506" src="https://asciinema.org/a/549506.js" async></script>
+
+<script id="asciicast-555380" src="https://asciinema.org/a/555380.js" async></script>
+
+<script id="asciicast-555596" src="https://asciinema.org/a/555596.js" async></script>
+
+<script id="asciicast-555599" src="https://asciinema.org/a/555599.js" async></script>
