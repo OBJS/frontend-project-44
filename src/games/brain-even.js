@@ -7,7 +7,7 @@ const gameDescription = 'Answer "yes" if the number is even, otherwise answer "n
 
 const isEven = (number) => number % 2 === 0;
 
-const startGameCore = () => {
+const startBrainEvenCore = () => {
   const answerStore = [];
   const randomInt = generateRandomInt(1, 101);
   const question = `Question: ${randomInt}\nYour answer: `;
@@ -20,7 +20,7 @@ const startGameCore = () => {
 };
 
 const start = () => {
-  playGame(startGameCore, gameDescription);
+  playGame(startBrainEvenCore, gameDescription);
 };
 
 export default start;

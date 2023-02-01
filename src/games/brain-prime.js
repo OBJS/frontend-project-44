@@ -21,20 +21,17 @@ const isPrime = (number) => {
   return true;
 };
 
-const startGameCore = () => {
-  const answerStore = [];
+const startBrainPrimeCore = () => {
   const randomInt = generateRandomInt(1, 20);
   const question = `Question: ${randomInt}\nYour answer: `;
 
   const correctAnswer = isPrime(randomInt) ? 'yes' : 'no';
 
-  answerStore.push(question, correctAnswer);
-
-  return answerStore;
+  return [question, correctAnswer];
 };
 
 const start = () => {
-  playGame(startGameCore, gameDescription);
+  playGame(startBrainPrimeCore, gameDescription);
 };
 
 export default start;

@@ -15,7 +15,7 @@ const getNumberSeries = (start, step, length, store = []) => {
   }
 };
 
-const startGameCore = () => {
+const startBrainProgressionCore = () => {
   const answerStore = [];
   const numbersSeries = [];
   const randomInt = generateRandomInt(1, 100);
@@ -36,7 +36,7 @@ const startGameCore = () => {
 };
 
 const start = () => {
-  playGame(startGameCore, gameDescription);
+  playGame(startBrainProgressionCore, gameDescription);
 };
 
 export default start;

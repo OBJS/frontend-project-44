@@ -31,7 +31,7 @@ const getResultOfExpression = (integer1, integer2, expression) => {
   return result;
 };
 
-const startGameCore = () => {
+const startBrainCalcCore = () => {
   const answerStore = [];
   const randomInt1 = generateRandomInt(1, 11);
   const randomInt2 = generateRandomInt(1, 11);
@@ -45,7 +45,7 @@ const startGameCore = () => {
 };
 
 const start = () => {
-  playGame(startGameCore, gameDescription);
+  playGame(startBrainCalcCore, gameDescription);
 };
 
 export default start;
