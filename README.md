@@ -8,7 +8,13 @@
 ## Setup
 
 ```bash
-install
+git clone https://github.com/OBJS/frontend-project-44.git
+```
+```bash
+npm i
+```
+```bash
+npm link
 ```
 
 ## Start the game
