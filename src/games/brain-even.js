@@ -8,15 +8,12 @@ const gameDescription = 'Answer "yes" if the number is even, otherwise answer "n
 const isEven = (number) => number % 2 === 0;
 
 const startBrainEvenCore = () => {
-  const answerStore = [];
   const randomInt = generateRandomInt(1, 101);
   const question = `Question: ${randomInt}\nYour answer: `;
 
   const correctAnswer = isEven(randomInt) ? 'yes' : 'no';
 
-  answerStore.push(question, correctAnswer);
-
-  return answerStore;
+  return [question, correctAnswer];
 };
 
 const start = () => {

@@ -6,7 +6,6 @@ import playGame from '../index.js';
 const gameDescription = 'Find the greatest common divisor of given numbers.';
 
 const startBrainGcdCore = () => {
-  const answerStore = [];
   let randomInt1 = generateRandomInt(1, 100);
   let randomInt2 = generateRandomInt(1, 100);
   const question = `Question: ${randomInt1} ${randomInt2}\nYour answer: `;
@@ -22,9 +21,8 @@ const startBrainGcdCore = () => {
   };
 
   const correctAnswer = String(getCorrectAnswer());
-  answerStore.push(question, correctAnswer);
 
-  return answerStore;
+  return [question, correctAnswer];
 };
 
 const start = () => {

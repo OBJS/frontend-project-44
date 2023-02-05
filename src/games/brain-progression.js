@@ -16,7 +16,6 @@ const getNumberSeries = (start, step, length, store = []) => {
 };
 
 const startBrainProgressionCore = () => {
-  const answerStore = [];
   const numbersSeries = [];
   const randomInt = generateRandomInt(1, 100);
   const progressionStep = generateRandomInt(1, 11);
@@ -30,9 +29,8 @@ const startBrainProgressionCore = () => {
   numbersSeries[replacementNumber] = '..';
   const questionOutput = numbersSeries.join(' ');
   const question = `Question: ${questionOutput}\nYour answer: `;
-  answerStore.push(question, correctAnswer);
 
-  return answerStore;
+  return [question, correctAnswer];
 };
 
 const start = () => {

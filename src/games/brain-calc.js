@@ -32,16 +32,14 @@ const getResultOfExpression = (integer1, integer2, expression) => {
 };
 
 const startBrainCalcCore = () => {
-  const answerStore = [];
   const randomInt1 = generateRandomInt(1, 11);
   const randomInt2 = generateRandomInt(1, 11);
   const randomExpression = generateExpression();
   const question = `Question: ${randomInt1} ${randomExpression} ${randomInt2}\nYour answer: `;
 
   const correctAnswer = String(getResultOfExpression(randomInt1, randomInt2, randomExpression));
-  answerStore.push(question, correctAnswer);
 
-  return answerStore;
+  return [question, correctAnswer];
 };
 
 const start = () => {
